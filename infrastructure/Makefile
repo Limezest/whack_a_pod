@@ -39,9 +39,9 @@ clean.repo:
 
 # Gets rid of all IPs
 clean.ips:
-	gcloud compute --project $(PROJECT) addresses create "api" --region $(REGION)
-	gcloud compute --project $(PROJECT) addresses create "admin" --region $(REGION)
-	gcloud compute --project $(PROJECT) addresses create "game" --region $(REGION)			
+	gcloud compute --project $(PROJECT) addresses delete "api" --region $(REGION)
+	gcloud compute --project $(PROJECT) addresses delete "admin" --region $(REGION)
+	gcloud compute --project $(PROJECT) addresses delete "game" --region $(REGION)			
 
 # Creates IPs
 ips:
