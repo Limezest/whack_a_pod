@@ -317,7 +317,7 @@ function API(hostname){
 
         });
         if (this.debug){
-            console.log("Called: ", url);
+            //  console.log("Called: ", url);
         }
     };
 
@@ -351,7 +351,7 @@ function API(hostname){
     };
 
     this.Get = function(){
-        ajaxProxy(getPodsURI(), successHandler, errorHandler, 500);
+        ajaxProxy(getPodsURI(), successHandler, errorHandler, 1000);
     };
 
     this.URL = getColorCompleteURI;
@@ -409,12 +409,12 @@ function DEPLOYMENTAPI(hostname, logwindow){
     }
 
     var error = function(e){
-        console.log("Failure: " , e);
+        //  console.log("Failure: " , e);
     }
 
     var ajaxProxy = function(url) {
         if (this.debug){
-            console.log("Called: ", url);
+            //  console.log("Called: ", url);
         }
         $.ajax({
             url: url,
@@ -479,7 +479,7 @@ function DEPLOYMENTAPI(hostname, logwindow){
 
         });
         if (this.debug){
-            console.log("Called: ", url);
+            //  console.log("Called: ", url);
         }
     };
 
@@ -492,7 +492,7 @@ function DEPLOYMENTAPI(hostname, logwindow){
 
         });
         if (this.debug){
-            console.log("Called: ", url);
+            //  console.log("Called: ", url);
         }
     };
 
@@ -551,7 +551,7 @@ function GAME(){
     }
 
     this.Start = function(colorFunction, scoreFunction, podsFunction, clockFunction){
-        this.gameInterval = setInterval(colorFunction, 300);
+        this.gameInterval = setInterval(colorFunction, 1000);
         this.scoreInterval = setInterval(scoreFunction, 10);
         this.podsInterval = setInterval(podsFunction, 200);
         this.clockInterval = setInterval(clockFunction, 100);
@@ -560,7 +560,7 @@ function GAME(){
     }
 
     this.Init = function(){
-        console.log("Init called.")
+        //  console.log("Init called.")
         state = "running";
         this.SetServiceUp();
     }

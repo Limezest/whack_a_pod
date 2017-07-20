@@ -158,12 +158,12 @@ function handlePods(e){
 
 function handlePodsError(e){
     $(".pods").html("");
-    console.log("Error getting pods:", e);
+    //  console.log("Error getting pods:", e);
 }
 
 function alertYouKilledIt(){
     if (!game.IsServiceDown() && game.GetState() == "running"){
-        console.log("Killed it.");
+        //  console.log("Killed it.");
         game.SetServiceDown();
         score.KnockDown()
         $(".alert .msg").html("You knocked down the service.");
@@ -228,9 +228,9 @@ function hideAlert(){
 }
 
 function podError(e){
-    console.log("Pod already gone? :", e);
+    //  console.log("Pod already gone? :", e);
 }
 
 function genericError(e){
-    console.log("Error: ", e);
+    //  console.log("Error: ", e);
 }

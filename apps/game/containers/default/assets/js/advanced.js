@@ -84,7 +84,7 @@ function handleColor(e){
 
     if (game.GetState() == "running"){
         game.SetServiceUp();
-        setReport("Service call result: "+ e.color, e.color);
+        setReport("Service call result: "+ e.color+" from pod: "+e.name, e.color);
         $(".responder").removeClass("responder");
         $("#"+e.name).addClass("responder");
 
@@ -218,11 +218,11 @@ function resetNode(e){
 
 function handlePodsError(e){
     $(".pods").html("");
-    console.log("Error getting pods:", e);
+    //  console.log("Error getting pods:", e);
 }
 
 function genericError(e){
-    console.log("Error: ", e);
+    //  console.log("Error: ", e);
 }
 
 function showScore(){
@@ -233,7 +233,7 @@ function getTimeLeft(){
 
 function alertYouKilledIt(){
     if (!game.IsServiceDown() && game.GetState() == "running"){
-        console.log("Killed it.");
+        //  console.log("Killed it.");
         game.SetServiceDown();
         score.KnockDown()
     }
@@ -260,7 +260,7 @@ function killHandler(e){
 }
 
 function podError(e){
-    console.log("Pod already gone? :", e);
+    //  console.log("Pod already gone? :", e);
 }
 
 function endDeployment(){
