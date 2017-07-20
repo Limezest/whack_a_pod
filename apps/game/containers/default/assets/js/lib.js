@@ -343,18 +343,18 @@ function API(hostname){
     };
 
     this.Color = function(successHandler, errorHandler){
-        ajaxProxy(getColorURI(), successHandler, errorHandler, 400);
+        ajaxProxy(getColorURI(), successHandler, errorHandler, 1000);
     };
 
     this.ColorComplete = function(successHandler, errorHandler){
-        ajaxProxy(getColorCompleteURI(), successHandler, errorHandler, 400);
+        ajaxProxy(getColorCompleteURI(), successHandler, errorHandler, 1000);
     };
 
     this.Get = function(){
         ajaxProxy(getPodsURI(), successHandler, errorHandler, 500);
     };
 
-    this.URL = getColorURI;
+    this.URL = getColorCompleteURI;
 
 }
 
