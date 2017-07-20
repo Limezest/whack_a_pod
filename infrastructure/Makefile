@@ -27,7 +27,7 @@ build.cluster:
 	--disk-size=$(NODEDISKSIZE) --machine-type=$(NODETYPE) --zone=$(ZONE)
 
 # Runs all the clean commands. 
-clean: env clean.cluster clean.repo
+clean: env clean.cluster clean.repo clean.ips
 
 # deletes the cluster. 
 clean.cluster:
@@ -37,6 +37,13 @@ clean.cluster:
 clean.repo:
 	-gsutil -m rm -r gs://artifacts.$(PROJECT).appspot.com
 
+# Gets rid of all IPs
+clean.ips:
+	gcloud compute --project $(PROJECT) addresses create "api" --region $(REGION)
+	gcloud compute --project $(PROJECT) addresses create "admin" --region $(REGION)
+	gcloud compute --project $(PROJECT) addresses create "game" --region $(REGION)			
+
+# Creates IPs
 ips:
 	gcloud compute --project $(PROJECT) addresses create "api" --region $(REGION)
 	gcloud compute --project $(PROJECT) addresses create "admin" --region $(REGION)
